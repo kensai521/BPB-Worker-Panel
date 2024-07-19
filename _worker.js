@@ -16,7 +16,7 @@ const proxyIPs= ['cdn.xn--b6gac.eu.org', 'cdn-all.xn--b6gac.eu.org', 'edgetunnel
 const defaultHttpPorts = ['80', '8080', '2052', '2082', '2086', '2095', '8880'];
 const defaultHttpsPorts = ['443', '8443', '2053', '2083', '2087', '2096'];
 
-let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
+let proxyIP = proxyIPs[Math.floor(Math.r和om() * proxyIPs.length)];
 
 let dohURL = 'https://cloudflare-dns.com/dns-query';
 
@@ -199,11 +199,11 @@ export default {
                         });
 
                     default:
-        		return new Response('Not found', { status: 404 });
-                       // url.hostname = 'www.speedtest.net';
-                       // url.protocol = 'https:';
-                       // request = new Request(url, request);
-                       // return await fetch(request);
+        		// return new Response('Not found', { status: 404 });
+                       url.hostname = 'www.speedtest.net';
+                       url.protocol = 'https:';
+                       request = new Request(url, request);
+                       return await fetch(request);
                 }
             } else {
                 return await vlessOverWSHandler(request);
