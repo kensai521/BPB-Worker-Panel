@@ -2363,6 +2363,7 @@ const renderHomePage = async (env, hostName, fragConfigs) => {
         
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 	<script>
+ 	const defaultHttpPorts = ['80', '8080', '2052', '2082', '2086', '2095', '8880'];
         const defaultHttpsPorts = ['443', '8443', '2053', '2083', '2087', '2096'];
         let activePortsNo = ${ports.length};
         let activeHttpsPortsNo = ${ports.filter(port => defaultHttpsPorts.includes(port)).length};
